@@ -41,7 +41,7 @@ sum(choose(100, x)*0.63^x*(1-0.63)^(100-x))
 
 Lets simulate some logit values and transform them back to odds and probabilities
 
-```{r, echo=FALSE, message=FALSE, fig.width=12, fig.height=5, fig.align='center'}
+```{r, message=FALSE, fig.width=12, fig.height=5, fig.align='center'}
 require(ggplot2) #load in ggplot2
 logit<-data.frame(LogOdds=seq(-2.5,2.5, by=.1), Pred=seq(-2.5,2.5, by=.1)) #create data frame where variable LogOdds containts numbers from -2.5 to 2.5 changing by 0.1 
 logit$Odds=exp(logit$LogOdds) #exponentiate logits that results in odds
@@ -130,7 +130,7 @@ knitr::kable(head(basketball[,c(5,13,18,31,34,43)]), format = 'html') #Printing 
 
 Let's plot the data to see how it looks like:
 
-```{r, echo=F, fig.width=12, fig.height=5, fig.align='center'}
+```{r, fig.width=12, fig.height=5, fig.align='center'}
 table(basketball$Win) #Tabulate outcome
 par(mfrow=c(1,2), bty='n',mar = c(5, 4, .1, .1), cex=1.1, pch=16)
 plot(density(basketball$X3PointShots.), main='', xlab='3POintsShots')
